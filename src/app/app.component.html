@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span>NG RAG</span>
+</mat-toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-12 flex flex-col justify-between">
+      <mat-card>
+        <div class="chat-container py-3">
+          <div class="msg | px-5 d-flex py-4" *ngFor="let item of messages" [ngClass]="item.type == 'AI'? 'bg-light': ''">
+            <span class="material-symbols-outlined">{{item.type == 'USER'? 'account_circle': 'robot_2'}}</span>
+            <div class="px-4">
+              <h5 class="mb-0">{{item.type}}</h5>
+              <p class="mb-0">{{item.message}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-container px-5">
+          <span *ngIf="isLoading" class="py-3 loader">Thinking...</span>
+          <form class="example-form">
+            <mat-form-field class="example-full-width w-100" appearance="outline">
+              <input matInput placeholder="Whats on your mind?" [formControl]="searchQuery">
+              <button matSuffix mat-icon-button aria-label="search" (click)="submitQuery()">
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </mat-form-field>
+            </form>
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
