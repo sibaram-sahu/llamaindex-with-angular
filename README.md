@@ -16,3 +16,7 @@ Create a .env file in the root directory and update OPENAI_API_KEY
 
 ## Data
 put all your data in the /data folder (support .txt file only for now)
+
+## Demo
+
+[Youtube Video](https://youtu.be/nHtSKKj1uoM)
